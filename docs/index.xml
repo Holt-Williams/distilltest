@@ -10,7 +10,6 @@
     <lastBuildDate>Wed, 15 Apr 2020 00:00:00 +0000</lastBuildDate>
     <item>
       <title>MTCARS Testing</title>
-      <dc:creator>G. Holt Williams</dc:creator>
       <link>https://holt-williams.github.io/posts/2020-04-15-article1</link>
       <description>In this article we look at utilizing the mtcars datasets in conjuction with the functionality of Distill, R Markdown, and ggplot</description>
       <guid>https://holt-williams.github.io/posts/2020-04-15-article1</guid>
