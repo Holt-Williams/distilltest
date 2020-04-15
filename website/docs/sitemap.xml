@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
+  <url>
+    <loc>https://holt-williams.github.io/about.html</loc>
+    <lastmod>2020-04-15T08:26:59-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://holt-williams.github.io/education.html</loc>
+    <lastmod>2020-04-15T12:03:01-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://holt-williams.github.io/firsttest.html</loc>
+    <lastmod>2020-04-15T10:18:35-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://holt-williams.github.io/</loc>
+    <lastmod>2020-04-15T12:40:54-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://holt-williams.github.io/posts/2020-04-15-article1/</loc>
+    <lastmod>2020-04-15T13:27:32-04:00</lastmod>
+  </url>
+</urlset>

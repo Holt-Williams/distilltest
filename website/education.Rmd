@@ -1,0 +1,33 @@
+---
+title: "Education"
+description: |
+  Below you will find my education background along with my certifications
+author:
+  - name: G. Holt Williams
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+### Northeastern University: 2020 - Expected 2022
+Masters of Professional Studies in Analytics  
+*Concentration  in Predictive Analytics*
+
+
+### James Madison University: 2013-2017
+Bachelor of Science in Economics  
+*Minor in Mathematics*
+
+
+### Certifications
+ |  | 
+:-------------: | :-------------: | :-------------: 
+Data Camp | *Data Scientist with R Track* | ![](images/datacamp.png)
+Data Camp | *Data Analyst with R Track* | ![](images/datacamp.png)
+Data Camp | *R Programmer Track* | ![](images/datacamp.png)
+AWS | *Certified Cloud Practioner* | ![](images/aws.png)
+
+
+
