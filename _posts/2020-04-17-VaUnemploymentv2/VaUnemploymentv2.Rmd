@@ -3,7 +3,9 @@ title: "Virginia Unemployment"
 description: |
   An exploration of Virginia Unemployment. This was inspired by an r-Blogger post on Georgia Unemployment.
 date: "`r Sys.Date()`"
-output: distill::distill_article
+output:
+  distill::distill_article:
+    self_contained: false
 ---
 
 ```{r setup, include=FALSE}
@@ -70,32 +72,32 @@ va_claims%>%mutate(year=year(date),
 
 
 #Using the previous chart we can show years stacked to show the outsized effect of COVIUD-19  :
-va_claims%>%
-          mutate(year=year(date),
-                month=month(date, label=T, abbr=T),
-                week=week(date))%>%
-          filter(year==c("2010", "2018","2019","2020"))%>%
-          ggplot(aes(week,claims))+
-          geom_line()+
-          facet_grid(rows=vars(as_factor(year)))
+<!-- va_claims%>% -->
+<!--           mutate(year=year(date), -->
+<!--                 month=month(date, label=T, abbr=T), -->
+<!--                 week=week(date))%>% -->
+<!--           filter(year==c("2010", "2018","2019","2020"))%>% -->
+<!--           ggplot(aes(week,claims))+ -->
+<!--           geom_line()+ -->
+<!--           facet_grid(rows=vars(as_factor(year))) -->
 
-va_claims%>%
-          mutate(year=year(date),
-                month=month(date, label=T, abbr=T),
-                week=week(date))%>%
-                group_by(year)%>%
-                mutate(yrSum=sum(claims))%>%
-                filter(week==1)%>%
-                filter(rank(yrSum)<=5)
-                
+<!-- va_claims%>% -->
+<!--           mutate(year=year(date), -->
+<!--                 month=month(date, label=T, abbr=T), -->
+<!--                 week=week(date))%>% -->
+<!--                 group_by(year)%>% -->
+<!--                 mutate(yrSum=sum(claims))%>% -->
+<!--                 filter(week==1)%>% -->
+<!--                 filter(rank(yrSum)<=5) -->
 
 
-#dont touch
-va_claims%>%
-          mutate(year=year(date),
-                month=month(date, label=T, abbr=T))%>%
-          filter(year==c("2009","2010","2020"))%>%
-          ggplot(aes(month,claims))+
-          geom_col()+
-          facet_grid(rows=vars(as_factor(year)),scales="free_x")
+
+<!-- #dont touch -->
+<!-- va_claims%>% -->
+<!--           mutate(year=year(date), -->
+<!--                 month=month(date, label=T, abbr=T))%>% -->
+<!--           filter(year==c("2009","2010","2020"))%>% -->
+<!--           ggplot(aes(month,claims))+ -->
+<!--           geom_col()+ -->
+<!--           facet_grid(rows=vars(as_factor(year)),scales="free_x") -->
 
