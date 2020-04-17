@@ -1,5 +1,15 @@
 [
   {
+    "path": "posts/2020-04-17-VaUnemploymentv2/",
+    "title": "Virginia Unemployment",
+    "description": "An exploration of Virginia Unemployment. This was inspired by an r-Blogger post on Georgia Unemployment.",
+    "author": [],
+    "date": "2020-04-17",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2020-04-17T15:31:37-04:00"
+  },
+  {
     "path": "posts/2020-04-15-article1/",
     "title": "MTCARS Testing",
     "description": "In this article we look at utilizing the mtcars datasets in conjuction with the functionality of Distill, R Markdown, and ggplot",
