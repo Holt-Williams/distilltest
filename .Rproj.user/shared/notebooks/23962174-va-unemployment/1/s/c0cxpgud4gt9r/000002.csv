@@ -1,0 +1,5 @@
+"0","va_claims <- ""VAICLAIMS"" %>% "
+"0","  tq_get(get = ""economic.data"",from = ""1999-01-01"") %>% "
+"0","  rename(claims = price) "
+"0","va_claims %>% "
+"0","  slice(1, n())"

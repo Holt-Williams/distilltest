@@ -2,6 +2,8 @@
 title: "MTCARS Testing"
 description: |
   In this article we look at utilizing the mtcars datasets in conjuction with the functionality of Distill, R Markdown, and ggplot
+author:
+  - name: G. Holt Williams
 date: 04-15-2020
 output:
   distill::distill_article:

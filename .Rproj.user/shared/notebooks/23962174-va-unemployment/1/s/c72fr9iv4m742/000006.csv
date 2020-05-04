@@ -1,0 +1,8 @@
+"0","va_claims%>%"
+"0","          mutate(year=year(date),"
+"0","                month=month(date, label=T, abbr=T),"
+"0","                week=week(date))%>%"
+"0","                group_by(year)%>%"
+"0","                mutate(yrSum=sum(claims))%>%"
+"0","                filter(week==1)%>%"
+"0","                filter(rank(yrSum)<=5)"

@@ -10,6 +10,8 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "test"
+      href: firsttest.html
     - text: "Education"
       href: education.html
 output: distill::distill_article

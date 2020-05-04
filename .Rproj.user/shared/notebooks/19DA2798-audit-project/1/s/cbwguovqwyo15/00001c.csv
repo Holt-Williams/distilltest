@@ -1,0 +1,8 @@
+"0","##Read Data"
+"0","#Computerized System Quality Assurance"
+"0","CSQA<- read_excel(""C:/Users/Holt/Desktop/github/website/CSQA_Audit_Data.xlsx"")"
+"0",""
+"0","#Good Workign Practice"
+"0","GWP<- read_excel(""AuditFiles/GXP_Audit_Data.xlsx"")"
+"2","Error: `path` does not exist: ‘AuditFiles/GXP_Audit_Data.xlsx’
+"

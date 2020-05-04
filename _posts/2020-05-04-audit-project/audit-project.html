@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Audit Analysis Project</title>
+  
+  <meta property="description" itemprop="description" content="This is a project for my ALY6000 Class, which is part of my classes for Northeastern University"/>
+  
+  
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2020-05-04"/>
+  <meta property="article:created" itemprop="dateCreated" content="2020-05-04"/>
+  <meta name="article:author" content="G. Holt Williams"/>
+  
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Audit Analysis Project"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="This is a project for my ALY6000 Class, which is part of my classes for Northeastern University"/>
+  <meta property="og:locale" content="en_US"/>
+  
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Audit Analysis Project"/>
+  <meta property="twitter:description" content="This is a project for my ALY6000 Class, which is part of my classes for Northeastern University"/>
+  
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Audit Analysis Project"]},{"type":"character","attributes":{},"value":["This is a project for my ALY6000 Class, which is part of my classes for Northeastern University\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["G. Holt Williams"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["05-04-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["audit-project_files/bowser-1.9.3/bowser.min.js","audit-project_files/distill-2.2.21/template.v2.js","audit-project_files/figure-html5/Audit Method-1.png","audit-project_files/figure-html5/Audit Method-2.png","audit-project_files/figure-html5/Audit Status-1.png","audit-project_files/figure-html5/Audit Status-2.png","audit-project_files/figure-html5/Audit Type-1.png","audit-project_files/figure-html5/Audit Type-2.png","audit-project_files/figure-html5/GWPAudit Method-1.png","audit-project_files/figure-html5/GWPAudit Method-2.png","audit-project_files/figure-html5/GWPAudit Method Clean-1.png","audit-project_files/figure-html5/GWPAudit Method Clean-2.png","audit-project_files/figure-html5/GWPAudit Status-1.png","audit-project_files/figure-html5/GWPAudit Status-2.png","audit-project_files/figure-html5/GWPAudit Type-1.png","audit-project_files/figure-html5/GWPAudit Type-2.png","audit-project_files/figure-html5/GWPClean Audit Type-1.png","audit-project_files/figure-html5/GWPGxP Area-1.png","audit-project_files/figure-html5/GWPGxP Area-2.png","audit-project_files/figure-html5/GWPin USA or OUS-1.png","audit-project_files/figure-html5/GWPin USA or OUS-2.png","audit-project_files/figure-html5/GWPProposed Quarter","audit-project_files/figure-html5/GWPProposed Quarter-1.png","audit-project_files/figure-html5/GWPProposed Quarter-2.png","audit-project_files/figure-html5/GxP Area-1.png","audit-project_files/figure-html5/GxP Area-2.png","audit-project_files/figure-html5/in USA or OUS-1.png","audit-project_files/figure-html5/in USA or OUS-2.png","audit-project_files/figure-html5/Proposed Quarter-1.png","audit-project_files/figure-html5/Proposed Quarter-2.png","audit-project_files/jquery-1.11.3/jquery.min.js","audit-project_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+  
+  <style type="text/css">
+  
+  body {
+    background-color: white;
+  }
+  
+  .pandoc-table {
+    width: 100%;
+  }
+  
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+  
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+  
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+  
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+  
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+  
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+  
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .shaded-content {
+    background: white;
+  }
+  
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  d-article {
+    padding-bottom: 30px;
+  }
+  
+  d-appendix {
+    padding-top: 30px;
+  }
+  
+  d-article>p>img {
+    width: 100%;
+  }
+  
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for table of contents */
+  
+  .d-toc {
+    color: rgba(0,0,0,0.8);
+    font-size: 0.8em;
+    line-height: 1em;
+  }
+  
+  .d-toc-header {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1.3em;
+  }
+  
+  .d-toc a {
+    border-bottom: none;
+  }
+  
+  .d-toc ul {
+    padding-left: 0;
+  }
+  
+  .d-toc li>ul {
+    padding-top: 0.8em;
+    padding-left: 16px;
+    margin-bottom: 0.6em;
+  }
+  
+  .d-toc ul,
+  .d-toc li {
+    list-style-type: none;
+  }
+  
+  .d-toc li {
+    margin-bottom: 0.9em;
+  }
+  
+  .d-toc-separator {
+    margin-top: 20px;
+    margin-bottom: 2em;
+  }
+  
+  .d-article-with-toc {
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  
+  
+  /* Tweak code blocks (note that this CSS is repeated above in an injection
+     into the d-code shadow dom) */
+  
+  d-code {
+    overflow-x: auto !important;
+  }
+  
+  pre.d-code code.d-code {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+  
+  pre.text-output {
+  
+    font-size: 12px;
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  @media(min-width: 768px) {
+  
+  d-code {
+    overflow-x: visible !important;
+  }
+  
+  pre.d-code code.d-code  {
+      padding-left: 18px;
+      font-size: 14px;
+  }
+  pre.text-output {
+    font-size: 14px;
+  }
+  }
+  
+  /* Figure */
+  
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+  
+  .figure img {
+    width: 100%;
+  }
+  
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+  
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+  
+  
+  
+  /* Tweak 1000px media break to show more text */
+  
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+  
+    .grid {
+      grid-column-gap: 16px;
+    }
+  
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+  
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+  
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+  
+  
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+  
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  
+  /* Social footer */
+  
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+  
+  .disqus-comments {
+    margin-right: 30px;
+  }
+  
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  
+  #disqus_thread {
+    margin-top: 30px;
+  }
+  
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+  
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+  
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+  
+  
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+  
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+  
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+  
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+  
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+  
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+  
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+  
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+  
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  </style>
+  
+  <script type="application/javascript">
+  
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+  
+  // show body when load is complete
+  function on_load_complete() {
+  
+    // set body to visible
+    document.body.style.visibility = 'visible';
+  
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+  
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+  
+  function init_distill() {
+  
+    init_common();
+  
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+  
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+  
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+  
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+  
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+  
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+  
+    // create d-bibliography
+    var bibliography = $('<d-bibliography></d-bibliography>');
+    $('#distill-bibliography').wrap(bibliography);
+  
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+  
+    // replace citations with <d-cite>
+    $('.citation').each(function(i, val) {
+      appendix = true;
+      var cites = $(this).attr('data-cites').split(" ");
+      var dt_cite = $('<d-cite></d-cite>');
+      dt_cite.attr('key', cites.join());
+      $(this).replaceWith(dt_cite);
+    });
+    // remove refs
+    $('#refs').remove();
+  
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+  
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+  
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+  
+    // replace code blocks with d-code
+    $('pre>code').each(function(i, val) {
+      var code = $(this);
+      var pre = code.parent();
+      var clz = "";
+      var language = pre.attr('class');
+      if (language) {
+        // map unknown languages to "clike" (without this they just dissapear)
+        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
+                                 "javascript", "js", "julia", "lua", "markdown",
+                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
+          language = "clike";
+        language = ' language="' + language + '"';
+        var dt_code = $('<d-code block' + language + clz + '></d-code>');
+        dt_code.text(code.text());
+        pre.replaceWith(dt_code);
+      } else {
+        code.addClass('text-output').unwrap().changeElementType('pre');
+      }
+    });
+  
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+  
+      // capture layout
+      var layout = $(this).attr('data-layout');
+  
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('d-code, pre.text-output, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+  
+  
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+  
+    // load distill framework
+    load_distill_framework();
+  
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+  
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+  
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+  
+      // table of contents
+      if (have_authors) // adjust border if we are in authors
+        $('.d-toc').parent().addClass('d-article-with-toc');
+  
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+  
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+  
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+  
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+  
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+  
+      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
+      $('d-code').each(function(i, val) {
+        var style = document.createElement('style');
+        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
+                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
+        if (this.shadowRoot)
+          this.shadowRoot.appendChild(style);
+      });
+  
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+  
+      // clear polling timer
+      clearInterval(tid);
+  
+      // show body now that everything is ready
+      on_load_complete();
+    }
+  
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+  
+  }
+  
+  function init_downlevel() {
+  
+    init_common();
+  
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+  
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+  
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+  
+    // remove toc
+    $('.d-toc-header').remove();
+    $('.d-toc').remove();
+    $('.d-toc-separator').remove();
+  
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+  
+  
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+  
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+  
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+  
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+  
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+  
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+  
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+  
+    $('body').addClass('downlevel');
+  
+    on_load_complete();
+  }
+  
+  
+  function init_common() {
+  
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+  
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+  
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+  
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+  
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+  
+      }
+    });
+  
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+  
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+  
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+  
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+  
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+  
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+  
+  </script>
+  
+  <!--/radix_placeholder_distill-->
+  <script src="audit-project_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="audit-project_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="audit-project_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="audit-project_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Audit Analysis Project","description":"This is a project for my ALY6000 Class, which is part of my classes for Northeastern University","authors":[{"author":"G. Holt Williams","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-05-04T00:00:00.000-04:00","citationText":"Williams, 2020"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Audit Analysis Project</h1>
+<p>This is a project for my ALY6000 Class, which is part of my classes for Northeastern University</p>
+</div>
+
+<div class="d-byline">
+  G. Holt Williams true 
+  
+<br/>05-04-2020
+</div>
+
+<div class="d-article">
+<h3 class="d-toc-header">Table of Contents</h3>
+<nav class="d-toc" id="TOC">
+<ul>
+<li><a href="#audits-data-analysis-part-i">Audits Data Analysis: Part I</a><ul>
+<li><a href="#gwp-audits-variables">GWP Audits Variables</a></li>
+<li><a href="#csqa-audits-variables">CSQA Audits Variables</a></li>
+</ul></li>
+<li><a href="#worksheet-analysis-part-ii">WorkSheet Analysis: Part II</a><ul>
+<li><a href="#gwp-part-ii">GWP: Part II</a></li>
+<li><a href="#csqa-part-ii">CSQA: Part II</a></li>
+</ul></li>
+<li><a href="#worksheet-analysis-part-iii">WorkSheet Analysis: Part III</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</nav>
+<hr class="d-toc-separator"/>
+<h2 id="audits-data-analysis-part-i" class="tabset">Audits Data Analysis: Part I</h2>
+<p>This is the output of G. Holt Williams’ Audits Data Analyst project. This was created using R Markdown, and can be navigated using the tabel of contents at the top*. Each dataset is within its own tab set, and the variables are split into further tabs under each dataset.</p>
+<p>*Note: Rmarkdown does not directly convert to dsitill. The Rmarkdown created uses a tabular structure and can be foudn here: <a href="https://github.com/Holt-Williams/AuditAnalysisProject" class="uri">https://github.com/Holt-Williams/AuditAnalysisProject</a></p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="gwp-audits-variables" class="tabset">GWP Audits Variables</h3>
+<p>Here begins the analysis for the “Good Working Practices” Dataset: GWP</p>
+<ol type="1">
+<li>Audit Status</li>
+<li>In USA or OUS</li>
+<li>GxP Area</li>
+<li>Audit Type</li>
+<li>Audit Method</li>
+<li>Proposed Quarter</li>
+</ol>
+<h4 id="audit-status">Audit Status</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+          vars  n       perc
+1    Cancelled  4 0.04166667
+2       Closed 19 0.19791667
+3    Completed  4 0.04166667
+4  In Progress 18 0.18750000
+5 Not In Scope 26 0.27083333
+6      Pending 14 0.14583333
+7    Scheduled 11 0.11458333</code></pre>
+<p><img src="audit-project_files/figure-html5/GWPAudit%20Status-1.png" width="624" /><img src="audit-project_files/figure-html5/GWPAudit%20Status-2.png" width="624" /></p>
+</div>
+<p>Audit Status is a useful variabel as it informs the reader about the possible status of the 96 Audits. Looking at the values we can see that only 4 of the 96 Audits have been completed. This can be useful to managers, for example a business leader might look at the 26 “Not in Scope” Audits and say this might be a good indicator that the people who ask for audits need a training to identify what the scope of an audit is.</p>
+<h4 id="in-usa-or-ous">In USA or OUS</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+  vars  n    perc
+1  OUS 45 0.46875
+2  USA 51 0.53125</code></pre>
+<p><img src="audit-project_files/figure-html5/GWPin%20USA%20or%20OUS-1.png" width="624" /><img src="audit-project_files/figure-html5/GWPin%20USA%20or%20OUS-2.png" width="624" /></p>
+</div>
+<p>This analyses shows that audits are evenly split betweeen the USA and out of the USA. This suggests that the company has roughly even amounts of clients from the US versus outside of the US. In a business this variabel can be useful in conjucntion with others, such as the Audit Status, to show the diffrences in US Clients versus foreign clients.</p>
+<h4 id="gxp-area">GxP Area</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+     vars  n       perc
+1     GCP 34 0.35416667
+2     GDP  7 0.07291667
+3     GLP 14 0.14583333
+4     GMP 33 0.34375000
+5 GMP/GDP  2 0.02083333
+6     GVP  6 0.06250000</code></pre>
+<p><img src="audit-project_files/figure-html5/GWPGxP%20Area-1.png" width="624" /><img src="audit-project_files/figure-html5/GWPGxP%20Area-2.png" width="624" /></p>
+</div>
+<p>GxP Area is not a straight forward variable, and is better explained by the Data Directory:</p>
+<p>GCP: Good Clinical Practice audits GLP: Good Laboratory Practice audit<br />
+GMP: Good Manufacturing Practice, audits of manufacturing sites<br />
+GDP: Good Distribution Practice, audits of distribution and logistic partners<br />
+GVP: Good Vigilance Practice, Audits of pharmacovigilance service providers</p>
+<p>Each of these values represent the type of audits being performed. The majority of the audits (69.8%) are in “Good Clinical Practice Audits” and “Good Manufacturing Practice.” This suggests msot audits look at clinical practices and manufacturing practices, but may also suggest clients do not trust this company with as many other types of audits. While technically possible, the distirbution here may also just show the ratio of the diffrent types of audits that are performed (i.e. GDP Audits just aren’t performed on a regular basis)</p>
+<h4 id="audit-type">Audit Type</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+               vars  n       perc
+1         (Unknown)  5 0.05208333
+2     Qualification 38 0.39583333
+3   Requalification 50 0.52083333
+4 Requalification/Q  3 0.03125000</code></pre>
+<p><img src="audit-project_files/figure-html5/GWPAudit%20Type-1.png" width="624" /><img src="audit-project_files/figure-html5/GWPAudit%20Type-2.png" width="624" /></p>
+</div>
+<p>Audit type is the first variable that has data that may be considerred “out of range.” The unknown category lets managers know that data is being added without a category in audit types, but should likely not be included in the percentage analysis for this variable. It is fine to include it in the counts analysis as alerts managers to their existence.</p>
+<h4 id="audit-type-clean">Audit Type: Clean</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+               vars  n       perc
+1     Qualification 38 0.41758242
+2   Requalification 50 0.54945055
+3 Requalification/Q  3 0.03296703</code></pre>
+<p><img src="audit-project_files/figure-html5/GWPClean%20Audit%20Type-1.png" width="624" /></p>
+</div>
+<p>The above is the same Audit Type analysis without the existence of the (Unknown) label. The percentages do not change much, but give a clearer picture to the different type sof audits being performed. This particular variable looks to be tracking New qualifications versus requalification of previous audits, which may indicate repeat versus new customers or customer areas.</p>
+<h4 id="audit-method">Audit Method</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+                                   vars  n       perc
+1                             (Unknown)  4 0.04166667
+2                                  None 24 0.25000000
+3                               On Site 52 0.54166667
+4 On Site \r\n*CSQA did not participate  1 0.01041667
+5                             Q in 2016  1 0.01041667
+6                         Questionnaire 10 0.10416667
+7                                Remote  2 0.02083333
+8                                   TBD  2 0.02083333</code></pre>
+<p><img src="audit-project_files/figure-html5/GWPAudit%20Method-1.png" width="624" /><img src="audit-project_files/figure-html5/GWPAudit%20Method-2.png" width="624" /></p>
+</div>
+<p>Audit Method can help decision makers decide how to appropiately staff auditers and to see what capabilties they can invest into the future. This variable can also be helped by performing some cleaning actions to it.</p>
+<h4 id="audit-method-clean">Audit Method: Clean</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+                                   vars  n       perc
+1                               On Site 52 0.76470588
+2 On Site \r\n*CSQA did not participate  1 0.01470588
+3                             Q in 2016  1 0.01470588
+4                         Questionnaire 10 0.14705882
+5                                Remote  2 0.02941176
+6                                   TBD  2 0.02941176</code></pre>
+<p><img src="audit-project_files/figure-html5/GWPAudit%20Method%20Clean-1.png" width="624" /><img src="audit-project_files/figure-html5/GWPAudit%20Method%20Clean-2.png" width="624" /></p>
+</div>
+<p>In the above graphs we removed values where Audit Methods equaled “(Unknown)” and “None,” as they do not show what actual methods were used and are caused by audits that were not performed or whose label.status was “Not in Scope.” By removing those values we see a truer picture which shows just over 75% of audits are performed on Site. “TBD” values look to be audits that have not been performed and could similarly be removed, but due to the low value here is likely unnecessary.</p>
+<h4 id="proposed-quarter">Proposed Quarter</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+       vars  n       perc
+1 (Unknown)  5 0.05208333
+2        Q1 23 0.23958333
+3        Q2 27 0.28125000
+4        Q3 21 0.21875000
+5   Q3 - Q4  3 0.03125000
+6        Q4 17 0.17708333</code></pre>
+<p><img src="audit-project_files/figure-html5/GWPProposed%20Quarter-1.png" width="624" /><img src="audit-project_files/figure-html5/GWPProposed%20Quarter-2.png" width="624" /></p>
+</div>
+<p>While the data dictionary for this varibale is light on what information is being conveyed, intuitevely it looks to be dates of when audits were performed or are going to be performed. The graphs show a pretty even spread with a high in Q2 and a low in Q4. Depending on which quarter system this relies on, the seasonal variatiosn are likely due to regualtion on when and how audits are performed. To decision makers this can be useful as they know to staff audters higher in Q1-Q2 and can refocus workers in Q3 or train new workers during Q4. This variable can also use some cleaning.</p>
+<h4 id="proposed-quarter-clean">Proposed Quarter: Clean</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+     vars  n       perc
+1      Q1 23 0.25274725
+2      Q2 27 0.29670330
+3      Q3 21 0.23076923
+4 Q3 - Q4  3 0.03296703
+5      Q4 17 0.18681319</code></pre>
+<p><img src="audit-project_files/figure-html5/GWPProposed Quarter:clean-1.png" width="624" /><img src="audit-project_files/figure-html5/GWPProposed Quarter:clean-2.png" width="624" /></p>
+</div>
+<h3 id="csqa-audits-variables" class="tabset">CSQA Audits Variables</h3>
+<p>Here begins the analysis for the “Computerized Systems Quality Assurance” Dataset: CSQA</p>
+<ol type="1">
+<li>Audit Status</li>
+<li>In USA or OUS</li>
+<li>GxP Area</li>
+<li>Audit Type</li>
+<li>Audit Method</li>
+<li>Proposed Quarter</li>
+</ol>
+<h4 id="audit-status-1">Audit Status</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+       vars n perc
+1    Closed 3 0.25
+2 Completed 9 0.75</code></pre>
+<p><img src="audit-project_files/figure-html5/Audit%20Status-1.png" width="624" /><img src="audit-project_files/figure-html5/Audit%20Status-2.png" width="624" /></p>
+</div>
+<p>Audit Status is a useful variabel as it informs the reader about the possible status of the 12 Audits. Looking at the values we can see that 9 of the 12 Audits have been completed. This is sueful to managers so they can understadn the current work demands on their team</p>
+<h4 id="in-usa-or-ous-1">In USA or OUS</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+  vars n perc
+1  OUS 3 0.25
+2  USA 9 0.75</code></pre>
+<p><img src="audit-project_files/figure-html5/in%20USA%20or%20OUS-1.png" width="624" /><img src="audit-project_files/figure-html5/in%20USA%20or%20OUS-2.png" width="624" /></p>
+</div>
+<p>This analyses shows that CSQA audits are not evenly split betweeen the USA and out of the USA. This suggests that the company has more CSQA audits in the US versus outside of the US. In a business this variabel can be useful in conjucntion with others, such as the Audit Status, to show the diffrences in US Clients versus foreign clients.</p>
+<h4 id="gxp-area-1">GxP Area</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+  vars  n       perc
+1  GCP  1 0.08333333
+2  GIS 10 0.83333333
+3  GMP  1 0.08333333</code></pre>
+<p><img src="audit-project_files/figure-html5/GxP%20Area-1.png" width="624" /><img src="audit-project_files/figure-html5/GxP%20Area-2.png" width="624" /></p>
+</div>
+<p>GxP Area is not a straight forward variable, and is better explained by the Data Directory:</p>
+<p>GCP: Good Clinical Practice audits GLP: Good Laboratory Practice audit<br />
+GMP: Good Manufacturing Practice, audits of manufacturing sites<br />
+GDP: Good Distribution Practice, audits of distribution and logistic partners<br />
+GVP: Good Vigilance Practice, Audits of pharmacovigilance service providers</p>
+<p>Each of these values represent the type of audits being performed. The majority of the audits (83.3%) are in “GIS” which is not listed in the data dictionary which makes it difficult to understand what is shown. This would be a good reason to go back to the client to better understand their data.</p>
+<h4 id="audit-type-1">Audit Type</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+             vars n       perc
+1        Internal 1 0.08333333
+2   Qualification 2 0.16666667
+3 Requalification 9 0.75000000</code></pre>
+<p><img src="audit-project_files/figure-html5/Audit%20Type-1.png" width="624" /><img src="audit-project_files/figure-html5/Audit%20Type-2.png" width="624" /></p>
+</div>
+<p>This particular variable looks to be tracking New qualifications versus requalification of previous audits, which may indicate repeat versus new customers or customer areas.</p>
+<h4 id="audit-method-1">Audit Method</h4>
+<p>*Audit Type and Audit Method variables are mislabelled as each other in the CSQA dataset. This is fixed in this analysis</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+           vars  n      perc
+1       On Site 10 0.8333333
+2 Questionnaire  2 0.1666667</code></pre>
+<p><img src="audit-project_files/figure-html5/Audit%20Method-1.png" width="624" /><img src="audit-project_files/figure-html5/Audit%20Method-2.png" width="624" /></p>
+</div>
+<p>Audit Method can help decision makers decide how to appropiately staff auditers and to see what capabilties they can invest into the future.</p>
+<h4 id="proposed-quarter-1">Proposed Quarter</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+  vars n       perc
+1   Q1 4 0.33333333
+2   Q2 1 0.08333333
+3   Q3 7 0.58333333</code></pre>
+<p><img src="audit-project_files/figure-html5/Proposed%20Quarter-1.png" width="624" /><img src="audit-project_files/figure-html5/Proposed%20Quarter-2.png" width="624" /></p>
+</div>
+<p>While the data dictionary for this varibale is light on what information is being conveyed, intuitevely it looks to be dates of when audits were performed or are going to be performed. Depending on which quarter system this relies on, the seasonal variatiosn are likely due to regualtion on when and how audits are performed. Q4 is missign which may suggest this is a newer dataset that hasn’t existed durign a Q4 yet. To decision makers this can be useful as they know to staff audters higher in Q1 and Q3 and can refocus workers in Q4 or train new workers during Q4.</p>
+<h2 id="worksheet-analysis-part-ii" class="tabset">WorkSheet Analysis: Part II</h2>
+<h3 id="gwp-part-ii">GWP: Part II</h3>
+<p>Here begins the analysis for the “Good Working Practices” Part II Dataset: GWP</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+df&lt;-read.csv(&quot;C:/Users/Holt/Desktop/github/website/AuditFiles/GXP_Audit_Data.csv&quot;)
+df&lt;- df[1:96,]
+df$Days_Intake_QSent&lt;-as.numeric(as.Date(df$Date.Q.sent, format=&#39;%m/%d/%y&#39;) - 
+                          as.Date(df$Date.of.Intake, optional=TRUE, format=&#39;%m/%d/%y&#39;))
+output&lt;-df[24]
+
+output$Days_QSent_QReceived&lt;-as.numeric(as.Date(df$Date.Q.Rcvd, format=&#39;%m/%d/%y&#39;) - 
+                                          as.Date(df$Date.Q.sent, format=&#39;%m/%d/%y&#39;))
+
+output$Days_OnSiteScheduled_AuditStartDate&lt;-as.numeric(as.Date(df$Audit.Start.Date, format=&#39;%m/%d/%y&#39;)-                                                   as.Date(df$Date.On.Site.Scheduled,format=&#39;%m/%d/%y&#39;))
+
+output$Days_StartDate_EndDate&lt;-as.numeric(as.Date(df$Audit.Start.Date, format=&#39;%m/%d/%y&#39;)-
+                              as.Date(df$Date.On.Site.Scheduled, format=&#39;%m/%d/%y&#39;))
+
+output$Days_AuditEnd_FinalReportDue&lt;-as.numeric(as.Date(df$Date.Final..Report.Due, format=&#39;%m/%d/%y&#39;)-
+                                                  as.Date(df$Audit.End.Date, format=&#39;%m/%d/%y&#39;))
+
+output$Days_FinalReportDue_CompletionDate&lt;-as.numeric(as.Date(df$Date.of..Completion,format=&#39;%m/%d/%y&#39;) - as.Date(df$Date.Final..Report.Due, format=&#39;%m/%d/%y&#39;) )
+
+output%&gt;%summary()</code></pre>
+<pre><code>
+ Days_Intake_QSent Days_QSent_QReceived
+ Min.   : 1.00     Min.   :11.00       
+ 1st Qu.: 1.00     1st Qu.:14.25       
+ Median : 2.00     Median :33.50       
+ Mean   :17.55     Mean   :29.70       
+ 3rd Qu.: 9.50     3rd Qu.:40.50       
+ Max.   :89.00     Max.   :57.00       
+ NA&#39;s   :85        NA&#39;s   :86          
+ Days_OnSiteScheduled_AuditStartDate Days_StartDate_EndDate
+ Min.   :  0.00                      Min.   :  0.00        
+ 1st Qu.: 28.00                      1st Qu.: 28.00        
+ Median : 47.00                      Median : 47.00        
+ Mean   : 54.49                      Mean   : 54.49        
+ 3rd Qu.: 68.00                      3rd Qu.: 68.00        
+ Max.   :153.00                      Max.   :153.00        
+ NA&#39;s   :51                          NA&#39;s   :51            
+ Days_AuditEnd_FinalReportDue Days_FinalReportDue_CompletionDate
+ Min.   :28.00                Min.   :-15.00                    
+ 1st Qu.:30.00                1st Qu.: -1.00                    
+ Median :30.00                Median :  0.00                    
+ Mean   :30.04                Mean   : -0.16                    
+ 3rd Qu.:30.00                3rd Qu.:  1.00                    
+ Max.   :31.00                Max.   : 20.00                    
+ NA&#39;s   :46                   NA&#39;s   :71                        </code></pre>
+</div>
+<ul>
+<li><p>Days_QSent_QReceived is likely the diffrence between the day the audit was sent and the audit was received by the customer. It does not apply to all audits because not all audits that are sent have been received by the customer.</p></li>
+<li><p>Days_StartDate_EndDate does not apply to all audits as there are audits currently being done which would not have an end date</p></li>
+</ul>
+<h3 id="csqa-part-ii">CSQA: Part II</h3>
+<p>Here begins the analysis for the “Computerized Systems Quality Assurance” Part II Dataset: CSQA</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+df&lt;-read.csv(&quot;C:/Users/Holt/Desktop/github/website/AuditFiles/CSQA_Audit_Data.csv&quot;)
+
+df$Days_Intake_QSent&lt;-as.numeric(as.Date(df$Date.Q.sent, format=&#39;%m/%d/%y&#39;) - 
+                                   as.Date(df$Date.of.Intake, optional=TRUE, format=&#39;%m/%d/%y&#39;))
+output&lt;-df[25]
+
+output$Days_QSent_QReceived&lt;-as.numeric(as.Date(df$Date.Q.Rcvd, format=&#39;%m/%d/%y&#39;) - 
+                                          as.Date(df$Date.Q.sent, format=&#39;%m/%d/%y&#39;))
+output$Days_OnSiteScheduled_AuditStartDate&lt;-as.numeric(as.Date(df$Audit.Start.Date, format=&#39;%m/%d/%y&#39;) - 
+                                                         as.Date(df$Date.On.Site..Scheduled, format=&#39;%m/%d/%y&#39;) )
+output$Days_StartDate_EndDate&lt;-as.numeric(as.Date(df$Audit.Start.Date, format=&#39;%m/%d/%y&#39;)-
+                                            as.Date(df$Date.On.Site..Scheduled, format=&#39;%m/%d/%y&#39;))
+output$Days_AuditEnd_FinalReportDue&lt;-as.numeric(as.Date(df$Date.Final...Report.Due, format=&#39;%m/%d/%y&#39;)-
+                                                  as.Date(df$Audit.End.Date, format=&#39;%m/%d/%y&#39;))
+output$Days_FinalReportDue_CompletionDate&lt;-as.numeric(as.Date(df$Date.of...Completion, format=&#39;%m/%d/%y&#39;) - as.Date(df$Date.Final...Report.Due, format=&#39;%m/%d/%y&#39;) )
+#Then, compute the mean and median for each of the 6 Variables
+output%&gt;%summary()</code></pre>
+<pre><code>
+ Days_Intake_QSent Days_QSent_QReceived
+ Min.   :27.00     Min.   :14          
+ 1st Qu.:38.75     1st Qu.:16          
+ Median :50.50     Median :18          
+ Mean   :50.50     Mean   :18          
+ 3rd Qu.:62.25     3rd Qu.:20          
+ Max.   :74.00     Max.   :22          
+ NA&#39;s   :10        NA&#39;s   :10          
+ Days_OnSiteScheduled_AuditStartDate Days_StartDate_EndDate
+ Min.   :14.00                       Min.   :14.00         
+ 1st Qu.:36.00                       1st Qu.:36.00         
+ Median :48.00                       Median :48.00         
+ Mean   :45.56                       Mean   :45.56         
+ 3rd Qu.:55.00                       3rd Qu.:55.00         
+ Max.   :63.00                       Max.   :63.00         
+ NA&#39;s   :3                           NA&#39;s   :3             
+ Days_AuditEnd_FinalReportDue Days_FinalReportDue_CompletionDate
+ Min.   :30                   Min.   :-1.000                    
+ 1st Qu.:30                   1st Qu.: 0.000                    
+ Median :30                   Median : 0.000                    
+ Mean   :30                   Mean   : 6.909                    
+ 3rd Qu.:30                   3rd Qu.:10.000                    
+ Max.   :30                   Max.   :40.000                    
+ NA&#39;s   :3                    NA&#39;s   :1                         </code></pre>
+</div>
+<ul>
+<li><p>Days_QSent_QReceived is likely the diffrence between the day the audit was sent and the audit was received by the customer. It does not apply to all audits because not all audits that are sent have been received by the customer.</p></li>
+<li><p>Days_StartDate_EndDate does not apply to all audits as there are audits currently being done which would not have an end date</p></li>
+</ul>
+<h2 id="worksheet-analysis-part-iii">WorkSheet Analysis: Part III</h2>
+<p>Without further information on the origin of the two datasets, I would recommend to not merge the two datasets. One reason is size diffrence of the two files. The GWP dataset has 96 rows versus the CSQA has 12 rows, which would mean the merged dataset would be overly influenced by the GWP dataset. Other reasons is the diffrence in the means for the diffrent variables. Along the similar idea, the means and medians of several of the variables are not close, and therefore the GWP dataset woudl also have a large influence on a merged dataset.</p>
+<p>While the above are reasons to not merge the datasets, it might be useful to merge them for the ease of data analysis. If the merged datasets contain an extra column with a variable indicating its origin, automated analysis would likely be easier as a simple filter can choose which data set to depict. When merging it would be prudent to make sure all variables are labelled correctly in both data sets. For example the Audit Method and Audit Type are mislabelled in CSQA.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This project was made for ALY6000 as part of the Audit Analysis Project.</p>
+<p>Code can be found at <a href="https://github.com/Holt-Williams/AuditAnalysisProject" class="uri">https://github.com/Holt-Williams/AuditAnalysisProject</a></p>
+<p>Librairies Utilized: tidyverse, rmarkdown, scales, stringr, ggrepel, readxl, ggthemes</p>
+<p>Thanks for reading! -G. Holt Williams</p>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
