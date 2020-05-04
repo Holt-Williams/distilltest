@@ -41,7 +41,6 @@ Here we can look at the weeks with the msot overall claims. Unsurprisingly we fi
 va_claims%>%top_n(n=5,wt=claims)%>%arrange(desc(claims))%>%select(-symbol)
 
 
-
 ```
 
 Also shown in column form:
@@ -53,7 +52,7 @@ va_claims%>%top_n(n=5,wt=claims)%>%ggplot(aes(as.character(date),claims))+geom_c
 ```
 
 
-We can also look at the claims numbers over the years through a line chart
+We can also look at the claims numbers over the years which shows just how extraordinary the most recent uenployment numbers are. 
 
 ```{r, include=TRUE}
 va_claims%>%ggplot(aes(date,claims))+geom_line(color="gray")
@@ -70,16 +69,43 @@ va_claims%>%mutate(year=year(date),
 ```
 
 
+Here we can see the general trends for the past 4 years of unemployment claims. 
+
+```{r, include=TRUE}
+va_claims%>%
+          mutate(year=year(date),
+                month=month(date, label=T, abbr=T),
+                week=week(date))%>%
+          filter(year==c("2017", "2018","2019","2020"))%>%
+          ggplot(aes(week,claims))+
+          geom_line()+
+          facet_grid(rows=vars(as_factor(year)))
+
+```
+
+Here is the same chart with the scales set to free which shows us an unusual patern of unemployment claims increasing throughout the end of the year.
+
+
+```{r, include=TRUE}
+
+va_claims%>%
+          mutate(year=year(date),
+                month=month(date, label=T, abbr=T),
+                week=week(date))%>%
+          filter(year==c("2017", "2018","2019","2020"))%>%
+          ggplot(aes(week,claims))+
+          geom_line()+
+          facet_grid(rows=vars(as_factor(year)), scales="free")
+```
+
+
+
+
+
+
 
 #Using the previous chart we can show years stacked to show the outsized effect of COVIUD-19  :
-<!-- va_claims%>% -->
-<!--           mutate(year=year(date), -->
-<!--                 month=month(date, label=T, abbr=T), -->
-<!--                 week=week(date))%>% -->
-<!--           filter(year==c("2010", "2018","2019","2020"))%>% -->
-<!--           ggplot(aes(week,claims))+ -->
-<!--           geom_line()+ -->
-<!--           facet_grid(rows=vars(as_factor(year))) -->
+
 
 <!-- va_claims%>% -->
 <!--           mutate(year=year(date), -->

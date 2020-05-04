@@ -58,7 +58,7 @@
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["VaUnemploymentv2_files/figure-html5/unnamed-chunk-4-1.png","VaUnemploymentv2_files/figure-html5/unnamed-chunk-5-1.png"]}
+  {"type":"character","attributes":{},"value":["VaUnemploymentv2_files/bowser-1.9.3/bowser.min.js","VaUnemploymentv2_files/distill-2.2.21/template.v2.js","VaUnemploymentv2_files/figure-html5/unnamed-chunk-4-1.png","VaUnemploymentv2_files/figure-html5/unnamed-chunk-5-1.png","VaUnemploymentv2_files/figure-html5/unnamed-chunk-7-1.png","VaUnemploymentv2_files/figure-html5/unnamed-chunk-7-2.png","VaUnemploymentv2_files/figure-html5/unnamed-chunk-8-1.png","VaUnemploymentv2_files/jquery-1.11.3/jquery.min.js","VaUnemploymentv2_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 
@@ -1346,7 +1346,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="VaUnemploymentv2_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
-<p>We can also look at the claims numbers over the years through a line chart</p>
+<p>We can also look at the claims numbers over the years which shows just how extraordinary the most recent uenployment numbers are.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="VaUnemploymentv2_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
@@ -1358,7 +1358,15 @@ document.addEventListener('DOMContentLoaded', function() {
   &lt;chr&gt;     &lt;date&gt;      &lt;int&gt; &lt;dbl&gt; &lt;ord&gt; &lt;dbl&gt;
 1 VAICLAIMS 1999-01-02   9361  1999 Jan       1</code></pre>
 </div>
-<p>#Using the previous chart we can show years stacked to show the outsized effect of COVIUD-19 : <!-- va_claims%>% --> <!--           mutate(year=year(date), --> <!--                 month=month(date, label=T, abbr=T), --> <!--                 week=week(date))%>% --> <!--           filter(year==c("2010", "2018","2019","2020"))%>% --> <!--           ggplot(aes(week,claims))+ --> <!--           geom_line()+ --> <!--           facet_grid(rows=vars(as_factor(year))) --></p>
+<p>Here we can see the general trends for the past 4 years of unemployment claims.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="VaUnemploymentv2_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+</div>
+Here is the same chart with the scales set to free which shows us an unusual patern of unemployment claims increasing throughout the end of the year.
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="VaUnemploymentv2_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
+</div>
+<p>#Using the previous chart we can show years stacked to show the outsized effect of COVIUD-19 :</p>
 <!-- va_claims%>% -->
 <!--           mutate(year=year(date), -->
 <!--                 month=month(date, label=T, abbr=T), -->
